@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* MISC */
+
+@import './sass/misc/mixins';
+@import './sass/misc/variables';
+@import './sass/misc/normalize';
+
+/* COMPONENTS */
+
+@import './sass/components/taskCreator';
+@import './sass/components/taskTable';
+@import './sass/components/taskRow';
+@import './sass/components/visibilitityControl';

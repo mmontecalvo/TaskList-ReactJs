@@ -1,0 +1,26 @@
+.visibilityControl {
+    @include flex(row, space-between, center, 0);
+    width: 100%;
+    padding: 0 $spacing-s;
+
+    .visibilityControl__toggle {
+        @include flex(row, flex-start, center, 0);
+
+        label {
+            @include text($color-text, $text-base, 400, left, 1em);
+        }
+    }
+
+    .visibilityControl__btnClear {
+        @include text($color-bg-card, $text-base, 400, left, 1em);
+        background: $color-secondary;
+        padding: $spacing-s;
+        text-transform: capitalize;
+        transition: 0.5s ease;
+        
+        &:hover {
+            background: $color-primary;
+            color: $color-text;
+        }
+    }
+}

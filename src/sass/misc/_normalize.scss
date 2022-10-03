@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: $color-bg;
+    color: $color-text;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-content {
+    @include flex(column, center, center, $spacing-m);
+    margin: $spacing-m auto;
+    padding: $spacing-m;
+    background-color: $color-bg-card;
+    width: 40rem;
+    border-radius: $spacing-s;
+}

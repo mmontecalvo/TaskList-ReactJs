@@ -1,0 +1,15 @@
+.taskRow {
+    td{
+        @include flex(row, flex-start, center, 0);
+        border-bottom: $b-desktop solid $color-lines;
+        padding: $spacing-s 0;
+
+        .taskRow__checkbox {
+            color: $color-primary;
+        }
+
+        .taskRow__name {
+            @include text($color-text, $text-base, 400, left, 1em);
+        }
+    }   
+}

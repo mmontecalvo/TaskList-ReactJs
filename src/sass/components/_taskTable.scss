@@ -1,0 +1,11 @@
+.taskTable {
+    width: 100%;
+
+    .taskTable__head {
+        .head__title {
+            @include text($color-primary, $text-m, 700, center, 1em);
+            border-bottom: $b-desktop solid $color-lines;
+            padding: $spacing-s 0;
+        }
+    }
+}

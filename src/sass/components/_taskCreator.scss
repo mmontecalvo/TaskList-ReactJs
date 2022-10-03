@@ -1,0 +1,29 @@
+.taskCreator {
+    @include flex(row, center, center, $spacing-s);
+
+    .taskCreator__input {
+        position: relative;
+        width: 22rem;
+
+        .input {
+            width: 100%;
+
+            label {
+                @include text($color-secondary, $text-base, 400, left, 1em);
+            }
+        }
+    }
+
+    .taskCreator__btn {
+        @include text($color-bg-card, $text-base, 400, left, 1em);
+        background: $color-secondary;
+        height: 5.4rem;
+        transition: 0.5s ease;
+        
+        &:hover {
+            background: $color-primary;
+            color: $color-text;
+        }
+    }
+}
+   
