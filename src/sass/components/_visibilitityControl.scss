@@ -12,7 +12,7 @@
     }
 
     .visibilityControl__btnClear {
-        @include text($color-bg-card, $text-base, 400, left, 1em);
+        @include text($color-bg-card, $text-base, 400, center, 1em);
         background: $color-secondary;
         padding: $spacing-s;
         text-transform: capitalize;

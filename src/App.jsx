@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import TaskCreator from './components/TaskCreator';
 import TaskTable from './components/TaskTable';
 import VisibilityControl from './components/VisibilityControl';
+import Footer from './components/Footer';
+import Swal from 'sweetalert2';
 
 function App() {
 
@@ -11,8 +13,18 @@ function App() {
   function createNewTask(taskName) {
     if (!tasksItems.find(task => task.name === taskName)) {
       setTasksItems([...tasksItems, {name: taskName, done: false}]);
+      Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Task saved!',
+        showConfirmButton: false,
+        timer: 1500
+      })
     } else {
-      alert("Tarea ya existe") // Agregar sweetAlert
+      Swal.fire({
+        icon: 'error',
+        title: 'The task already exists!',
+      })
     }
   }
 
@@ -21,8 +33,17 @@ function App() {
   }
 
   function cleanTasks() {
-    setTasksItems(tasksItems.filter(tasks => !tasks.done));
-    setShowCompleted(false);
+    Swal.fire({
+      title: 'Do you want to clear the task completed list?',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, clear!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setTasksItems(tasksItems.filter(tasks => !tasks.done));
+        setShowCompleted(false);
+        Swal.fire('The task completed list has been cleared!', '', 'success')
+      }
+    })
   }
 
   useEffect(() => {
@@ -46,6 +67,7 @@ function App() {
           <TaskTable title={"Tasks Completed"} tasks={tasksItems} toggleTask={toggleTask} toggleValue={true}/>
         )
       }
+      <Footer />
     </>
   );
 }

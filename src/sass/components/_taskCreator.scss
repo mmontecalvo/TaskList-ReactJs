@@ -15,7 +15,7 @@
     }
 
     .taskCreator__btn {
-        @include text($color-bg-card, $text-base, 400, left, 1em);
+        @include text($color-bg-card, $text-base, 400, center, 1em);
         background: $color-secondary;
         height: 5.4rem;
         transition: 0.5s ease;
@@ -26,4 +26,3 @@
         }
     }
 }
-   

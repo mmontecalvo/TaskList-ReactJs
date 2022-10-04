@@ -31,3 +31,9 @@ a{
     width: 40rem;
     border-radius: $spacing-s;
 }
+
+@media screen and (max-width: 600px){
+    .main-content {
+        max-width: 94%;
+    }
+}
